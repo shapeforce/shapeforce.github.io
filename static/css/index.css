@@ -131,6 +131,11 @@ body {
   background: #f8fafc;
 }
 
+.model-showcase-shell {
+  width: min(1720px, calc(100vw - 2rem));
+  margin: 0 auto;
+}
+
 .model-showcase-intro {
   margin: 0 auto 1.5rem;
   max-width: 720px;
@@ -139,7 +144,7 @@ body {
 }
 
 .model-showcase-card {
-  padding: 1rem;
+  padding: 0.85rem;
   background: #ffffff;
   border: 1px solid #e8ecf1;
   border-radius: 20px;
@@ -149,13 +154,14 @@ body {
 .model-showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: start;
 }
 
 .model-showcase-title {
-  margin-bottom: 0.9rem !important;
+  margin-bottom: 0.7rem !important;
   text-align: center;
+  font-size: 1.1rem !important;
 }
 
 .model-viewer {
@@ -180,6 +186,10 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .model-showcase-shell {
+    width: min(100%, calc(100vw - 1.5rem));
+  }
+
   .model-showcase-grid {
     grid-template-columns: 1fr;
   }
