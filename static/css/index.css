@@ -152,10 +152,15 @@ body {
 }
 
 .model-showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
   gap: 1rem;
   align-items: start;
+}
+
+.model-showcase-grid > .model-showcase-card {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .model-showcase-title {
@@ -191,7 +196,7 @@ body {
   }
 
   .model-showcase-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .model-showcase-card {
