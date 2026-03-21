@@ -146,6 +146,18 @@ body {
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
 
+.model-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.model-showcase-title {
+  margin-bottom: 0.9rem !important;
+  text-align: center;
+}
+
 .model-viewer {
   position: relative;
   width: 100%;
@@ -168,6 +180,10 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .model-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
   .model-showcase-card {
     padding: 0.75rem;
     border-radius: 16px;
