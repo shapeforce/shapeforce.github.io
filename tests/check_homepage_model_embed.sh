@@ -12,6 +12,7 @@ bibtex_line=$(rg -n '<section class="section" id="BibTeX">' "$file" | cut -d: -f
 rg -q '<h2 class="title is-3 has-text-centered">3D Model</h2>' "$file"
 rg -q 'class="model-showcase-shell"' "$file"
 rg -q 'class="model-feature-row"' "$file"
+rg -q 'class="model-parts-shell"' "$file"
 rg -q 'class="model-parts-grid"' "$file"
 if sed -n '/<!-- 3D Model -->/,/<!-- BibTeX -->/p' "$file" | rg -q 'columns is-centered|column is-full|model-showcase-grid'; then
   exit 1
