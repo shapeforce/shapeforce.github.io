@@ -191,6 +191,37 @@
   </div>
 </section>
 
+<!-- Real-World Tasks -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Real-World Tasks</h2>
+        <div class="card" style="border-radius: 10px;">
+          <div class="card-content">
+            <div style="border-radius: 10px; overflow: hidden; background: #000;">
+              <img id="task-gif" src="gif/desk-1.gif" alt="Real-world task GIF" style="display: block; width: 100%; height: auto;">
+            </div>
+            <div style="margin-top: 0.75rem;">
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="task-select" aria-label="Select real-world task">
+                      <option value="gif/desk-1.gif">Desk</option>
+                      <option value="gif/maze-1.gif">Maze</option>
+                      <option value="gif/whiteboard-1.gif">Whiteboard</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 3D Model -->
 <section class="section model-showcase-section">
   <div class="model-showcase-shell">
@@ -400,5 +431,21 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var selectEl = document.getElementById('task-select');
+    var imgEl = document.getElementById('task-gif');
+    if (!selectEl || !imgEl) return;
+
+    function setGif(src) {
+      imgEl.src = src + (src.indexOf('?') === -1 ? '?' : '&') + 't=' + Date.now();
+    }
+
+    setGif(selectEl.value);
+    selectEl.addEventListener('change', function (e) {
+      setGif(e.target.value);
+    });
+  })();
+</script>
 </body>
 </html>
